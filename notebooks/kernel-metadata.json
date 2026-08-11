@@ -1,0 +1,13 @@
+{
+  "id": "chattybeak/mission14-korean-tax-rag",
+  "title": "Mission 14 - Korean Tax Guide RAG",
+  "code_file": "mission14_rag_kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}
