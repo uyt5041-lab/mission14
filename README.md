@@ -51,6 +51,7 @@ notebooks/mission14_rag_kaggle.ipynb
 notebooks/kernel-metadata.json
 scripts/sync_kaggle_to_drive.py Kaggle 실행본을 기존 Drive file ID에 동기화
 tests/                          네트워크/GPU 없는 핵심 테스트
+.github/workflows/static-checks.yml  PR의 테스트·compile·notebook parse
 ```
 
 ## 로컬 정적 검증

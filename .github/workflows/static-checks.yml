@@ -1,0 +1,53 @@
+name: Static checks
+
+"on":
+  pull_request:
+  push:
+    branches:
+      - main
+      - "agent/**"
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python
+        run: >-
+          python -m py_compile
+          src/rag_core.py
+          src/kaggle_ops.py
+          scripts/sync_kaggle_to_drive.py
+          tools/build_kaggle_notebook.py
+          tools/harden_colab_notebook.py
+      - name: Parse notebooks and JSON
+        run: |
+          python - <<'PY'
+          import ast
+          import json
+          from pathlib import Path
+
+          for path in sorted(Path("notebooks").glob("*.ipynb")):
+              notebook = json.loads(path.read_text(encoding="utf-8"))
+              for index, cell in enumerate(notebook["cells"], start=1):
+                  if cell.get("cell_type") == "code":
+                      ast.parse("".join(cell.get("source", [])), filename=f"{path}::cell{index}")
+              print("PASS", path)
+
+          for path in (
+              Path("notebooks/kernel-metadata.json"),
+              Path("data/evaluation_qa.json"),
+              Path("data/metadata_rules.json"),
+              Path("data/table_corrections.json"),
+          ):
+              json.loads(path.read_text(encoding="utf-8"))
+              print("PASS", path)
+          PY

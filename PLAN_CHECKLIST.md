@@ -140,6 +140,7 @@
 | 2026-08-11 | 리뷰 P1/P2 보강 | 완료 | 숫자 보존, unique chunk ID, metadata fingerprint, hard gate, multi-fact metric, Qwen chat template |
 | 2026-08-11 | Kaggle 실행판 작성 | 완료 | run contract, resume, Drive backup, COMPLETE lock, post-run Drive notebook sync 코드 |
 | 2026-08-11 | 보강판 정적 검증 | 완료 | unittest 15/15, Python compile, Colab/Kaggle code-cell parse, gate 순서, secret scan |
+| 2026-08-11 | GitHub CI | 완료 | PR/push에서 unittest, Python compile, notebook·JSON parse 자동 실행 |
 | 미실행 | Colab 환경/전체 PDF | 대기 | GPU 런타임과 실제 PDF 실행 결과 필요 |
 
 ## Kaggle 전환 체크리스트
