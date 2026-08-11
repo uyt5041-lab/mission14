@@ -70,11 +70,17 @@ cells = [
     code(
         """
         from pathlib import Path
-        import shutil, subprocess, sys
+        import os, shutil, subprocess, sys
 
         REPO_URL = "https://github.com/uyt5041-lab/mission14.git"
-        REPO_REF = "main"
+        REPO_REF = os.environ.get("MISSION14_REPO_REF", "main").strip() or "main"
         REPO_DIR = Path("/kaggle/working/mission14_repo")
+        REQUIRED_REPO_PATHS = (
+            "requirements-kaggle.txt",
+            "src/rag_core.py",
+            "src/kaggle_ops.py",
+            "data/evaluation_qa.json",
+        )
 
         attached = [
             path.parent
@@ -89,12 +95,40 @@ cells = [
                     ["git", "clone", "--depth", "1", "--branch", REPO_REF, REPO_URL, str(REPO_DIR)],
                     check=True,
                 )
+        elif (REPO_DIR / ".git").exists():
+            subprocess.run(
+                ["git", "-C", str(REPO_DIR), "fetch", "--depth", "1", "origin", REPO_REF],
+                check=True,
+            )
+            subprocess.run(
+                ["git", "-C", str(REPO_DIR), "checkout", "--detach", "FETCH_HEAD"],
+                check=True,
+            )
+
+        missing = [name for name in REQUIRED_REPO_PATHS if not (REPO_DIR / name).is_file()]
+        if missing:
+            raise FileNotFoundError(
+                "Mission 14 source checkout is incomplete. "
+                f"requested_ref={REPO_REF!r}, repo_dir={str(REPO_DIR)!r}, missing={missing}. "
+                "Use a ref that contains the Kaggle files, or attach a complete repository Dataset."
+            )
+
+        if (REPO_DIR / ".git").exists():
+            REPO_COMMIT = subprocess.run(
+                ["git", "-C", str(REPO_DIR), "rev-parse", "HEAD"],
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+        else:
+            REPO_COMMIT = "attached-dataset"
+
         subprocess.run(
             [sys.executable, "-m", "pip", "install", "-q", "-r", str(REPO_DIR / "requirements-kaggle.txt")],
             check=True,
         )
         sys.path.insert(0, str(REPO_DIR))
-        print("Repository ready:", REPO_DIR)
+        print("Repository ready:", REPO_DIR, "ref:", REPO_REF, "revision:", REPO_COMMIT)
         """
     ),
     code(
@@ -122,7 +156,7 @@ cells = [
         RESUME_DRIVE_FILE_ID = ""
         WORK_ROOT = Path("/kaggle/working")
 
-        CONFIG = RagRunConfig()
+        CONFIG = RagRunConfig(source_revision=REPO_COMMIT)
         if RESUME_RUN_ID and RESUME_DRIVE_FILE_ID:
             restore_run_from_drive(
                 RESUME_DRIVE_FILE_ID,
