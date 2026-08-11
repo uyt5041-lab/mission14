@@ -28,6 +28,11 @@ jobs:
           scripts/sync_kaggle_to_drive.py
           tools/build_kaggle_notebook.py
           tools/harden_colab_notebook.py
+      - name: Verify generated Kaggle notebook is current
+        run: |
+          cp notebooks/mission14_rag_kaggle.ipynb /tmp/mission14_rag_kaggle.ipynb
+          python tools/build_kaggle_notebook.py
+          diff -u /tmp/mission14_rag_kaggle.ipynb notebooks/mission14_rag_kaggle.ipynb
       - name: Parse notebooks and JSON
         run: |
           python - <<'PY'
