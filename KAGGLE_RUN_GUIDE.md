@@ -12,6 +12,8 @@ kaggle kernels push -p notebooks
 
 권장 기본 slug는 `chattybeak/mission14-korean-tax-rag`입니다. Kaggle 설정에서 GPU와 Internet을 켭니다. Internet을 끌 경우 이 저장소와 원문 PDF를 private Dataset으로 첨부해야 합니다.
 
+첫 setup cell은 기본적으로 `main`을 가져오며, 기존 checkout이 있어도 최신 ref를 다시 fetch/checkout합니다. 이어서 `requirements-kaggle.txt`와 핵심 source/data 파일의 존재를 확인한 뒤에만 package를 설치합니다. 실행에 사용한 Git commit은 `source_revision`으로 config hash에 포함되므로, 서로 다른 코드 버전으로 같은 run을 잘못 resume할 수 없습니다. 다른 브랜치를 시험할 때만 Kaggle 환경변수 `MISSION14_REPO_REF`에 브랜치명을 지정합니다.
+
 ## 2. Google Drive OAuth를 1회 준비
 
 Kaggle VM에서 OOB manual copy/paste 인증을 하지 않습니다.
