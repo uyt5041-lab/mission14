@@ -1,0 +1,152 @@
+[
+  {
+    "id": "Q01",
+    "question": "2024년 귀속 월세액 세액공제의 총급여 기준과 연간 월세액 한도는 얼마인가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["8천만원", "1,000만원"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "직접 사실",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q02",
+    "question": "총급여가 5,500만원 이하인 근로자의 월세액 세액공제율은 얼마인가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["5,500만원", "공제율"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "직접 사실",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q03",
+    "question": "결혼세액공제의 공제금액과 적용 대상 혼인신고 연도는 어떻게 되는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["결혼세액공제", "혼인신고"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "개정 전후",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q04",
+    "question": "비거주자의 연말정산에서 적용되지 않는 공제에는 무엇이 있는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["비거주자", "본인 외"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "조건과 예외",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q05",
+    "question": "거주자 판단에서 183일 기준은 어떻게 적용되는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["183일", "거주자"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "조건과 예외",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q06",
+    "question": "소득기준을 초과한 부양가족의 간소화자료 제공은 어떻게 제한되는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["부양가족", "간소화자료", "소득기준"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "조건과 예외",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q07",
+    "question": "기업이 지급한 출산지원금의 비과세 조건은 무엇인가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["출산지원금", "비과세"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "개정 전후",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q08",
+    "question": "연말정산 과다공제의 대표 사례에는 무엇이 있는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["과다공제"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "직접 사실",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q09",
+    "question": "회사가 근로소득 지급명세서를 제출해야 하는 시기는 언제인가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["지급명세서", "제출"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "직접 사실",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q10",
+    "question": "외국인 근로자와 비거주자는 같은 개념인가? 적용 기준을 구분해 설명하라.",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["외국인", "비거주자", "거주자"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "조건과 예외",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q11",
+    "question": "총급여 7,500만원인 무주택 근로자가 연간 월세 1,000만원을 지급했다면 공제 대상이 되는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["7,500만원", "1,000만원", "무주택"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "복합 판단",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q12",
+    "question": "국민건강보험공단에서 환급받은 본인부담금도 의료비 세액공제에 포함할 수 있는가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["환급", "본인부담금", "의료비"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "복합 판단",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q13",
+    "question": "개정 전과 개정 후의 연간 월세액 공제 한도 차이는 얼마인가?",
+    "expected_answer": "PDF 원문 확인 후 확정",
+    "required_keywords": ["750만원", "1,000만원", "차이"],
+    "gold_pdf_pages": [],
+    "gold_status": "pending_manual_verification",
+    "type": "개정 전후",
+    "scope": "in_scope"
+  },
+  {
+    "id": "Q14",
+    "question": "2026년 전기차 구입 세액공제는 얼마인가?",
+    "expected_answer": "제공된 문서에서 확인되지 않습니다.",
+    "required_keywords": ["확인되지 않습니다"],
+    "gold_pdf_pages": [],
+    "gold_status": "not_applicable",
+    "type": "문서 밖 질문",
+    "scope": "out_of_scope"
+  },
+  {
+    "id": "Q15",
+    "question": "2025년 이후 개정된 가상자산 세법을 설명해 달라.",
+    "expected_answer": "제공된 문서에서 확인되지 않습니다.",
+    "required_keywords": ["확인되지 않습니다"],
+    "gold_pdf_pages": [],
+    "gold_status": "not_applicable",
+    "type": "문서 밖 질문",
+    "scope": "out_of_scope"
+  }
+]
