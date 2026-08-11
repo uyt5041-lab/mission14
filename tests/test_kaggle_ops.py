@@ -24,6 +24,16 @@ class KaggleOpsTests(unittest.TestCase):
             second = create_run_layout(directory, RagRunConfig(), resume_run_id="known-run")
             self.assertEqual(first["config_hash"], second["config_hash"])
 
+    def test_source_revision_is_part_of_config_hash(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = create_run_layout(
+                directory, RagRunConfig(source_revision="commit-a"), resume_run_id="run-a"
+            )
+            second = create_run_layout(
+                directory, RagRunConfig(source_revision="commit-b"), resume_run_id="run-b"
+            )
+            self.assertNotEqual(first["config_hash"], second["config_hash"])
+
     def test_pdf_fingerprint_is_sealed_for_resume(self):
         with tempfile.TemporaryDirectory() as directory:
             run = create_run_layout(directory, RagRunConfig(), resume_run_id="known-run")
