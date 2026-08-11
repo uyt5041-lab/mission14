@@ -1,0 +1,10 @@
+[
+  {
+    "start_pdf_page": 1,
+    "end_pdf_page": 12,
+    "part": "원문 확인 후 입력",
+    "section": "원문 확인 후 입력",
+    "printed_page_offset": null,
+    "verification_note": "PDF를 눈으로 확인한 뒤 data/metadata_rules.json으로 복사"
+  }
+]

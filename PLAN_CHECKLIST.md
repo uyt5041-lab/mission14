@@ -137,7 +137,26 @@
 |---|---|---|---|
 | 2026-08-11 | 저장소 초기화 | 완료 | README, 체크리스트, 노트북, core module, 평가셋 생성 |
 | 2026-08-11 | 정적 검증 | 완료 | Python compile, JSON parse, 노트북 15개 code-cell parse, unittest 4/4 통과 |
+| 2026-08-11 | 리뷰 P1/P2 보강 | 완료 | 숫자 보존, unique chunk ID, metadata fingerprint, hard gate, multi-fact metric, Qwen chat template |
+| 2026-08-11 | Kaggle 실행판 작성 | 완료 | run contract, resume, Drive backup, COMPLETE lock, post-run Drive notebook sync 코드 |
+| 2026-08-11 | 보강판 정적 검증 | 완료 | unittest 15/15, Python compile, Colab/Kaggle code-cell parse, gate 순서, secret scan |
 | 미실행 | Colab 환경/전체 PDF | 대기 | GPU 런타임과 실제 PDF 실행 결과 필요 |
+
+## Kaggle 전환 체크리스트
+
+- [x] `/kaggle/input`과 `/kaggle/working` 경로를 사용한다.
+- [x] Inspection과 Build run을 분리했다.
+- [x] Gate가 청킹과 인덱싱보다 먼저 실행된다.
+- [x] CUDA가 없을 때 최종 transformer를 CPU로 조용히 전환하지 않는다.
+- [x] config hash와 PDF fingerprint가 다른 resume를 막는다.
+- [x] Drive checkpoint archive의 경로 탈출을 검사한다.
+- [x] Drive upload의 file ID와 size를 기록한다.
+- [x] Kaggle 실행본을 기존 Drive notebook file ID에 update하는 스크립트를 작성했다.
+- [ ] 실제 Kaggle GPU에서 Inspection Version을 저장했다.
+- [ ] 원문 확인값을 metadata/gold evidence에 반영했다.
+- [ ] 실제 Kaggle GPU에서 Build Version을 저장했다.
+- [ ] Drive checkpoint upload와 restore를 실제로 검증했다.
+- [ ] Kaggle source/output을 pull하고 Drive notebook readback 검증을 통과했다.
 
 ## 다음 실행 순서
 
