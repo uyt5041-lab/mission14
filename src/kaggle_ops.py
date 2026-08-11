@@ -46,6 +46,7 @@ def atomic_write_json(path: str | Path, payload: Any) -> None:
 class RagRunConfig:
     project: str = "mission14"
     stage: str = "kaggle_rag_v1"
+    source_revision: str = "unspecified"
     seed: int = 42
     embedding_model: str = "nlpai-lab/KURE-v1"
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
